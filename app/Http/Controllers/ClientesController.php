@@ -9,6 +9,6 @@ class ClientesController extends Controller
   public function index(Request $request)
   {
       $clients=\App\Clients::all();
-      return view('clients',compact('clients'));
+      return view('/clients',compact('clients'));
   }
 }

@@ -9,12 +9,11 @@
                 </tr>
             </thead>
             <tbody>
-
             @foreach($clients as $client)
                 <tr>
-                    <td>{{ $client['nombre'] }}</td>
+                    <td>{{ $client['name'] }}</td>
                     <td>{{ $client['nit'] }}</td>
-                    <td>{{ $client['direccion'] }}</td>
+                    <td>{{ $client['address'] }}</td>
                 </tr>
             @endforeach
             </tbody>
