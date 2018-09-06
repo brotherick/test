@@ -23,7 +23,7 @@
         </tr>
       </thead>
       <tbody>
-        @foreach($clients as $client)
+        @foreach(json_decode($clients,true) as $client)
         <tr>
           <td>{{ $client['name'] }}</td>
           <td>{{ $client['nit'] }}</td>

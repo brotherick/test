@@ -11,5 +11,11 @@
 |
 */
 
+Route::get('/', function (){
+  return view('/welcome');
+});
+
 Route::get('/clients', 'ClientesController@index');
+Route::get('/clients/balance_pendiente', 'ClientesController@pend_balance');
 Route::get('/invoice', 'Invoice@index');
+Route::get('/invoice/balance_pendiente', 'Invoice@pend_balance');

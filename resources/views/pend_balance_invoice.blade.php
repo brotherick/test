@@ -17,17 +17,24 @@
     <table class="table table-striped">
       <thead>
         <tr>
-          <th>Name</th>
-          <th>Nit</th>
-          <th>Direccion</th>
+          <th># Factura</th>
+          <th>Serie</th>
+          <th>Monto</th>
+          <th>Balance</th>
+          <th>Id Cliente</th>
+          <th>Fecha</th>
         </tr>
       </thead>
       <tbody>
-        @foreach($clients as $client)
+        @foreach(json_decode($invoices,true) as $invoice)
+        @php $date = date('Y-m-d',strtotime($invoice['created_at'])); @endphp
         <tr>
-          <td>{{ $client['name'] }}</td>
-          <td>{{ $client['nit'] }}</td>
-          <td>{{ $client['address'] }}</td>
+          <td>{{ $invoice['id'] }}</td>
+          <td>{{ $invoice['serie'] }}</td>
+          <td>{{ $invoice['monto'] }}</td>
+          <td>{{ $invoice['balance'] }}</td>
+          <td>{{ $invoice['client_id'] }}</td>
+          <td>{{ $date }}</td>
         </tr>
         @endforeach
       </tbody>
