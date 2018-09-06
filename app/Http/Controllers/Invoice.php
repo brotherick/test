@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 
 class Invoice extends Controller
 {
-  $invoices=\App\Invoice::all();
-  return view('/clients',compact('clients'));
+  public function index(Request $request)
+  {
+    $invoices=\App\Invoice::all();
+    return view('/invoice',compact('invoices'));
+  }
 }

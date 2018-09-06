@@ -12,4 +12,4 @@
 */
 
 Route::get('/clients', 'ClientesController@index');
-Route::get('/invoice', 'InvoiceController@index');
+Route::get('/invoice', 'Invoice@index');
