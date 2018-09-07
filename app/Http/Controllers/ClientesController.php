@@ -18,7 +18,7 @@ class ClientesController extends Controller
   public function pend_balance(Request $request)
   {
       $clients= DB::table('clients')
-        ->whereExists(function ($query){
+        ->whereIn('id',function ($query){
         $query->select(DB::raw('client_id'))
         ->from('invoice')
         ->whereRaw('invoice.balance < invoice.monto');
